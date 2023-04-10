@@ -9,7 +9,9 @@ module.exports = {
     port: 3002,
   },
   output: {
-    publicPath: "http://localhost:3002/",
+    filename: "app2.bundle.[contenthash].js",
+    path: path.resolve(__dirname, "build"),
+    clean: true,
   },
   module: {
     rules: [

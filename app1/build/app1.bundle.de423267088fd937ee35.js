@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkapp1=self.webpackChunkapp1||[]).push([[470],{470:(e,t,n)=>{n.r(t),n.d(t,{CountProvider:()=>s,useCount:()=>c});var r=n(950),u=n.n(r);const a=(0,r.createContext)([0,()=>{}]),s=({children:e})=>u().createElement(a.Provider,{value:(0,r.useState)(0)},e),c=()=>(0,r.useContext)(a)}}]);
