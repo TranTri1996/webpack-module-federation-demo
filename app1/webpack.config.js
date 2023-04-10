@@ -10,8 +10,7 @@ module.exports = {
     port: 3001,
   },
   output: {
-    path: path.resolve(__dirname, "build"),
-    filename: "app1.bundle.js",
+    publicPath: "http://localhost:3001/",
   },
   module: {
     rules: [
@@ -28,8 +27,13 @@ module.exports = {
   plugins: [
     new ModuleFederationPlugin({
       name: "app1",
+      filename: "remoteEntry.js",
       remotes: {
         app2: "app2@http://localhost:3002/remoteEntry.js",
+        app1: "app1@http://localhost:3001/remoteEntry.js",
+      },
+      exposes: {
+        "./store": "./src/store/myStore.js",
       },
       shared: { react: { singleton: true }, "react-dom": { singleton: true } },
     }),

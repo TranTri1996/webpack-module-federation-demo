@@ -9,8 +9,7 @@ module.exports = {
     port: 3002,
   },
   output: {
-    path: path.resolve(__dirname, "build"),
-    filename: "app2.bundle.js",
+    publicPath: "http://localhost:3002/",
   },
   module: {
     rules: [
@@ -28,6 +27,9 @@ module.exports = {
     new ModuleFederationPlugin({
       name: "app2",
       filename: "remoteEntry.js",
+      remotes: {
+        app1: "app1@http://localhost:3001/remoteEntry.js",
+      },
       exposes: {
         "./App": "./src/App",
       },

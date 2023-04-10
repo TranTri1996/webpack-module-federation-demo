@@ -1,7 +1,9 @@
 import React, { Suspense } from "react";
-const RemoteApp = React.lazy(() => import("app2/App"));
-
+import RemoteApp from "app2/App";
+import { useCount, CountProvider } from "app1/store";
 const App = () => {
+  const [count, setCount] = useCount();
+
   return (
     <div>
       <div
@@ -13,6 +15,8 @@ const App = () => {
         }}
       >
         <h1>App1</h1>
+        <p>{`count value is: ${count}`}</p>
+        <button onClick={() => setCount(count + 1)}>Increase</button>
       </div>
 
       <Suspense fallback="loading...">
