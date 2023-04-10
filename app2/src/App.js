@@ -15,7 +15,7 @@ const App = () => {
       }}
     >
       <h1>App 2</h1>
-      <p>{`Today is: ${moment().format()}`}</p>
+      <p>{`Today is: ${moment().format("MMMM Do YYYY, h:mm:ss a")}`}</p>
       <p>{`count value is: ${count}`}</p>
       <button onClick={() => setCount(count - 1)}>Decrease</button>
     </div>
