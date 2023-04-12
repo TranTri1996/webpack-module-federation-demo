@@ -1,6 +1,6 @@
 import React, { Suspense } from "react";
 import RemoteApp from "app2/App";
-import { useCount, CountProvider } from "app1/store";
+import { useCount } from "app1/store";
 
 const App = () => {
   const [count, setCount] = useCount();

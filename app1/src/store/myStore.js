@@ -10,8 +10,6 @@ const CountProvider = ({ children }) => {
   );
 };
 
-const useCount = () => {
-  return useContext(CountContext);
-};
+const useCount = () => useContext(CountContext);
 
 export { useCount, CountProvider };
