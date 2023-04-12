@@ -27,7 +27,7 @@ module.exports = {
   plugins: [
     new ModuleFederationPlugin({
       name: "app2",
-      filename: "remoteEntry.js",
+      filename: "app2RemoteEntry.js",
       exposes: {
         "./App": "./src/App",
       },
